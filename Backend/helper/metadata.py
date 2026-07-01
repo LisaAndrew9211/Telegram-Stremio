@@ -759,8 +759,9 @@ async def metadata(filename: str, channel: int, msg_id, override_id: str = None)
         combined = {"season": season, "start": None, "end": None}
         episode = 1
     if not quality:
-        LOGGER.warning(f"Skipping {filename}: No resolution (parsed={parsed})")
-        return None
+        quality = "1080p"
+        # LOGGER.warning(f"Skipping {filename}: No resolution (parsed={parsed})")
+        # return None
     if not title:
         LOGGER.info(f"No title parsed from: {filename} (parsed={parsed})")
         return None
